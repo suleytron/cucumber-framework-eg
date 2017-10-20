@@ -1,0 +1,3 @@
+default: ENVIRONMENT=qa BROWSER=chrome
+e2e: ENVIRONMENT=t5 BROWSER=chrome -t ~@failing -t @e2e_only --format html --out test_results/test.html
+regression: ENVIRONMENT=t5 BROWSER=chrome -t ~@failing -t ~@e2e_only -t ~@helper -t ~@wip -t ~@todo -t @complete
